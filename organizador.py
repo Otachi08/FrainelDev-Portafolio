@@ -2,7 +2,7 @@ import os
 import shutil
 
 # Ruta de la carpeta que queremos limpiar (Descargas)
-# Nota: 'frainel' debe ser tu nombre de usuario en la Mac
+
 ruta_descargas = os.path.expanduser("~/Downloads")
 
 # Diccionario para organizar por tipos de archivo
