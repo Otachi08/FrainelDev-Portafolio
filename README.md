@@ -5,7 +5,8 @@
 ---
 
 ### 🛠️ Tecnologías & Herramientas
-- **Lenguajes:** - ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
+- **Lenguajes:** 
+- - ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
   - ![Java](https://img.shields.io/badge/java-%23ED8B00.svg?style=for-the-badge&logo=openjdk&logoColor=white)
 - **Entorno:** macOS Monterey (MacBook Pro i7 | 16GB RAM)
 - **Herramientas:** VS Code, Git, GitHub, IntelliJ IDEA
@@ -27,3 +28,5 @@ Script de Python que automatiza la limpieza de la carpeta de descargas, clasific
 ---
 📫 **¿Cómo contactarme?**
 - GitHub: [@otachi08](https://github.com/otachi08)
+
+  
