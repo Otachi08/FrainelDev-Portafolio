@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FrainelDev | Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --bg: #0f172a;
+            --text: #f8fafc;
+            --accent: #38bdf8;
+            --card: #1e293b;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        header {
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+        h1 { color: var(--accent); font-size: 3rem; margin: 0; }
+        .container { max-width: 800px; width: 90%; }
+        .project-card {
+            background: var(--card);
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin-bottom: 2rem;
+            border-left: 5px solid var(--accent);
+        }
+        .tech-stack { font-size: 0.9rem; color: var(--accent); }
+        a { color: var(--accent); text-decoration: none; font-weight: bold; }
+        .badge {
+            background: #334155;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 0.8rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>FrainelDev</h1>
+        <p>Software Developer | Python & Java | Monterrey, MX</p>
+        <div style="margin-top: 1rem;">
+            <span class="badge">macOS Monterey</span>
+            <span class="badge">16GB RAM</span>
+            <span class="badge">i7 Processor</span>
+        </div>
+    </header>
+
+    <div class="container">
+        <h2>🚀 Proyectos Recientes</h2>
+        
+        <div class="project-card">
+            <h3>🧹 Organizador de Archivos Inteligente</h3>
+            <p>Script de automatización que organiza la carpeta de descargas usando lógica de Python.</p>
+            <div class="tech-stack">#Python #Automation #OS-Library</div>
+            <br>
+            <a href="https://github.com/tu-usuario/FrainelDev-Portfolio/blob/main/organizador.py" target="_blank">Ver Código <i class="fab fa-github"></i></a>
+        </div>
+
+        <div class="project-card">
+            <h3>🤖 Bot de Telegram Helper</h3>
+            <p>Asistente personal en Telegram para notificaciones y control remoto de procesos.</p>
+            <div class="tech-stack">#Python #API #TelegramBot</div>
+            <br>
+            <a href="#" target="_blank">Ver Código <i class="fab fa-github"></i></a>
+        </div>
+    </div>
+
+</body>
+</html>
