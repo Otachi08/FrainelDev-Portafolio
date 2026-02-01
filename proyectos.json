@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "nombre": "Mechanical Machine Pouch",
+    "lenguaje": "HTML/CSS/JS",
+    "descripcion": "Landing page profesional para servicios mecánicos con integración de WhatsApp.",
+    "url": "https://github.com/otachi08/Mechanical-Machine-Pouch"
+  },
+  {
+    "id": 2,
+    "nombre": "Aplicación Web de Gestión",
+    "lenguaje": "Desarrollo Full Stack",
+    "descripcion": "Sistema de gestión de usuarios y dashboard administrativo con base de datos SQL.",
+    "url": "https://github.com/frainelcarmona"
+  },
+  {
+    "id": 3,
+    "nombre": "Organizador de Archivos",
+    "lenguaje": "Python",
+    "descripcion": "Automatización para organizar carpetas de descargas.",
+    "url": "https://github.com/otachi08/FrainelDev-Portafolio/blob/main/organizador.py"
+  }
+]
