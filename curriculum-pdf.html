@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portafolio Frainel Carmona</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Outfit:wght@300;500;700;900&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary: #0066FF;
+            --dark: #0A0E27;
+            --accent: #00F5FF;
+            --light: #F5F5F7;
+            --border: #E1E1E3;
+        }
+        
+        body {
+            font-family: 'Outfit', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 2rem;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .header {
+            text-align: center;
+            color: white;
+            margin-bottom: 2rem;
+            animation: fadeIn 0.6s ease-out;
+        }
+        
+        .header h1 {
+            font-size: clamp(1.5rem, 5vw, 3rem);
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 20px rgba(0,0,0,0.3);
+        }
+        
+        .header p {
+            font-size: clamp(0.9rem, 2vw, 1.2rem);
+            opacity: 0.9;
+        }
+        
+        .pdf-container {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+            animation: fadeIn 0.8s ease-out;
+        }
+        
+        .pdf-page {
+            padding: 3rem;
+            background: white;
+        }
+        
+        /* PDF Header */
+        .pdf-header {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 4px solid var(--dark);
+        }
+        
+        .pdf-name-section h1 {
+            font-size: 3rem;
+            font-weight: 900;
+            color: var(--dark);
+            line-height: 1;
+            margin-bottom: 0.5rem;
+            font-family: 'Space Mono', monospace;
+        }
+        
+        .pdf-title {
+            font-size: 1.4rem;
+            color: var(--primary);
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        
+        .pdf-subtitle {
+            color: #666;
+            font-size: 0.95rem;
+        }
+        
+        .pdf-contact {
+            display: flex;
+            flex-direction: column;
+            gap: 0.6rem;
+            font-size: 0.9rem;
+            color: #444;
+            justify-content: center;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .contact-icon {
+            width: 20px;
+            text-align: center;
+        }
+        
+        /* About Section */
+        .pdf-about {
+            margin-bottom: 2rem;
+            background: var(--light);
+            padding: 1.5rem;
+            border-radius: 10px;
+            border-left: 4px solid var(--primary);
+        }
+        
+        .pdf-about p {
+            line-height: 1.7;
+            color: #333;
+            font-size: 0.95rem;
+        }
+        
+        /* Two Column Layout */
+        .pdf-two-column {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        /* Section Styles */
+        .pdf-section {
+            margin-bottom: 2rem;
+        }
+        
+        .pdf-section-title {
+            font-size: 1.4rem;
+            font-weight: 900;
+            color: var(--dark);
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding-bottom: 0.5rem;
+            border-bottom: 3px solid var(--primary);
+        }
+        
+        /* Skills Grid */
+        .pdf-skills-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.7rem;
+        }
+        
+        .pdf-skill {
+            padding: 0.7rem;
+            background: var(--light);
+            border-left: 3px solid var(--primary);
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: var(--dark);
+            transition: all 0.2s;
+        }
+        
+        .pdf-skill:hover {
+            background: var(--primary);
+            color: white;
+        }
+        
+        /* Experience Item */
+        .experience-item {
+            margin-bottom: 1.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .experience-item:last-child {
+            border-bottom: none;
+        }
+        
+        .experience-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            margin-bottom: 0.5rem;
+        }
+        
+        .experience-title {
+            font-weight: 700;
+            color: var(--dark);
+            font-size: 1.1rem;
+        }
+        
+        .experience-date {
+            color: #666;
+            font-size: 0.85rem;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+        
+        .experience-company {
+            color: var(--primary);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+        }
+        
+        .experience-description {
+            color: #555;
+            line-height: 1.6;
+            font-size: 0.9rem;
+        }
+        
+        /* Project Item */
+        .project-item {
+            margin-bottom: 1.5rem;
+            background: var(--light);
+            padding: 1.2rem;
+            border-radius: 8px;
+            border-left: 4px solid var(--primary);
+        }
+        
+        .project-title {
+            font-weight: 700;
+            color: var(--dark);
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .project-description {
+            color: #555;
+            line-height: 1.6;
+            font-size: 0.9rem;
+            margin-bottom: 0.7rem;
+        }
+        
+        .project-tech {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+        
+        .tech-badge {
+            background: var(--primary);
+            color: white;
+            padding: 0.3rem 0.7rem;
+            border-radius: 5px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+        
+        /* Education Item */
+        .education-item {
+            margin-bottom: 1rem;
+        }
+        
+        .education-degree {
+            font-weight: 700;
+            color: var(--dark);
+            font-size: 1.05rem;
+        }
+        
+        .education-school {
+            color: var(--primary);
+            font-weight: 600;
+            margin: 0.3rem 0;
+        }
+        
+        .education-date {
+            color: #666;
+            font-size: 0.85rem;
+        }
+        
+        /* Print Button */
+        .print-section {
+            text-align: center;
+            padding: 2rem;
+            background: var(--light);
+        }
+        
+        .btn-print {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            font-size: 1rem;
+            font-weight: 700;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 4px 20px rgba(0,102,255,0.3);
+            font-family: 'Outfit', sans-serif;
+        }
+        
+        .btn-print:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 30px rgba(0,102,255,0.4);
+        }
+        
+        .note {
+            background: #FFF3CD;
+            border-left: 4px solid #FFB020;
+            padding: 1rem;
+            margin-top: 2rem;
+            border-radius: 6px;
+            font-size: 0.9rem;
+        }
+        
+        .note strong {
+            color: #856404;
+            display: block;
+            margin-bottom: 0.3rem;
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+            
+            .header, .print-section, .note {
+                display: none;
+            }
+            
+            .pdf-container {
+                box-shadow: none;
+                border-radius: 0;
+            }
+            
+            .pdf-page {
+                padding: 0;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            body {
+                padding: 1rem;
+            }
+            
+            .pdf-page {
+                padding: 1.5rem;
+            }
+            
+            .pdf-header {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+            
+            .pdf-name-section h1 {
+                font-size: 2rem;
+            }
+            
+            .pdf-contact {
+                border-top: 2px solid var(--border);
+                padding-top: 1rem;
+            }
+            
+            .pdf-two-column {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+            
+            .pdf-skills-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📄 Wireframe PDF Portafolio</h1>
+            <p>Vista previa de tu CV en formato PDF</p>
+        </div>
+        
+        <div class="pdf-container">
+            <div class="pdf-page">
+                <!-- Header -->
+                <div class="pdf-header">
+                    <div class="pdf-name-section">
+                        <h1>FRAINEL<br>CARMONA</h1>
+                        <div class="pdf-title">Desarrollador Web Full Stack</div>
+                        <div class="pdf-subtitle">Estudiante de Ingeniería en Sistemas Computacionales</div>
+                    </div>
+                    <div class="pdf-contact">
+                        <div class="contact-item">
+                            <span class="contact-icon">📧</span>
+                            <span>frainelcarmona560@gmail.com</span>
+                        </div>
+                        <div class="contact-item">
+                            <span class="contact-icon">📱</span>
+                            <span>+1 829-308-9508</span>
+                        </div>
+                        <div class="contact-item">
+                            <span class="contact-icon">📍</span>
+                            <span>Santiago, República Dominicana</span>
+                        </div>
+                        <div class="contact-item">
+                            <span class="contact-icon">💼</span>
+                            <span>github.com/frainelcarmona</span>
+                        </div>
+                        <div class="contact-item">
+                            <span class="contact-icon">🔗</span>
+                            <span>frainelcarmona.dev</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- About Section -->
+                <div class="pdf-about">
+                    <p>
+                        Desarrollador web apasionado con experiencia en la creación de sitios modernos y funcionales. 
+                        Especializado en Ruby on Rails, HTML/CSS, JavaScript y Flutter. Enfocado en diseño responsivo, 
+                        experiencia de usuario optimizada e integración de APIs. Busco oportunidades para aplicar mis 
+                        habilidades técnicas en proyectos desafiantes y seguir creciendo profesionalmente.
+                    </p>
+                </div>
+                
+                <!-- Two Column Layout -->
+                <div class="pdf-two-column">
+                    <!-- Left Column -->
+                    <div>
+                        <!-- Experience Section -->
+                        <div class="pdf-section">
+                            <h2 class="pdf-section-title">Experiencia</h2>
+                            
+                            <div class="experience-item">
+                                <div class="experience-header">
+                                    <div>
+                                        <div class="experience-title">Desarrollador Web Freelance</div>
+                                        <div class="experience-company">Independiente</div>
+                                    </div>
+                                    <div class="experience-date">2024 - Presente</div>
+                                </div>
+                                <div class="experience-description">
+                                    • Desarrollo de landing pages y sitios web corporativos con diseño responsivo<br>
+                                    • Implementación de integraciones con APIs de terceros y servicios de mensajería<br>
+                                    • Optimización de rendimiento y SEO para mejorar visibilidad en buscadores<br>
+                                    • Trabajo directo con clientes para entender requerimientos y entregar soluciones efectivas
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Projects Section -->
+                        <div class="pdf-section">
+                            <h2 class="pdf-section-title">Proyectos Destacados</h2>
+                            
+                            <div class="project-item">
+                                <div class="project-title">Mechanical Machine Pouch</div>
+                                <div class="project-description">
+                                    Landing page profesional para empresa de servicios mecánicos. Incluye diseño moderno, 
+                                    integración con WhatsApp, secciones optimizadas y formularios de contacto.
+                                </div>
+                                <div class="project-tech">
+                                    <span class="tech-badge">HTML</span>
+                                    <span class="tech-badge">CSS</span>
+                                    <span class="tech-badge">JavaScript</span>
+                                    <span class="tech-badge">Responsive Design</span>
+                                </div>
+                            </div>
+                            
+                            <div class="project-item">
+                                <div class="project-title">Aplicación Web con Rails</div>
+                                <div class="project-description">
+                                    Sistema desarrollado con Ruby on Rails con gestión de usuarios, dashboard administrativo 
+                                    e integración de bases de datos.
+                                </div>
+                                <div class="project-tech">
+                                    <span class="tech-badge">Ruby on Rails</span>
+                                    <span class="tech-badge">PostgreSQL</span>
+                                    <span class="tech-badge">Bootstrap</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Right Column -->
+                    <div>
+                        <!-- Skills Section -->
+                        <div class="pdf-section">
+                            <h2 class="pdf-section-title">Habilidades</h2>
+                            <div class="pdf-skills-grid">
+                                <div class="pdf-skill">Ruby on Rails</div>
+                                <div class="pdf-skill">HTML/CSS</div>
+                                <div class="pdf-skill">JavaScript</div>
+                                <div class="pdf-skill">Flutter/Dart</div>
+                                <div class="pdf-skill">Python</div>
+                                <div class="pdf-skill">C++</div>
+                                <div class="pdf-skill">API Integration</div>
+                                <div class="pdf-skill">Git/GitHub</div>
+                                <div class="pdf-skill">SQL Databases</div>
+                                <div class="pdf-skill">Responsive Design</div>
+                                <div class="pdf-skill">RESTful APIs</div>
+                                <div class="pdf-skill">UI/UX Design</div>
+                            </div>
+                        </div>
+                        
+                        <!-- Education Section -->
+                        <div class="pdf-section">
+                            <h2 class="pdf-section-title">Educación</h2>
+                            <div class="education-item">
+                                <div class="education-degree">Ingeniería en Sistemas Computacionales</div>
+                                <div class="education-school">Universidad Dominicana O&M</div>
+                                <div class="education-date">Septiembre 2023 - Presente</div>
+                            </div>
+                        </div>
+                        
+                        <!-- Additional Skills -->
+                        <div class="pdf-section">
+                            <h2 class="pdf-section-title">Otros</h2>
+                            <div class="pdf-skill" style="margin-bottom: 0.5rem;">
+                                Diseño de Aplicaciones Web
+                            </div>
+                            <div class="pdf-skill" style="margin-bottom: 0.5rem;">
+                                Gestión de Base de Datos
+                            </div>
+                            <div class="pdf-skill" style="margin-bottom: 0.5rem;">
+                                Análisis Estadístico
+                            </div>
+                            <div class="pdf-skill">
+                                Desarrollo de Bots
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="note">
+                    <strong>✨ Formato optimizado para ATS</strong>
+                    Este diseño mantiene toda la información en una página y es fácil de leer por sistemas de seguimiento de candidatos.
+                </div>
+            </div>
+            
+            <div class="print-section">
+                <button class="btn-print" onclick="window.print()">🖨️ Imprimir o Guardar como PDF</button>
+                <p style="margin-top: 1rem; color: #666; font-size: 0.9rem;">
+                    Usa Ctrl+P (o Cmd+P en Mac) y selecciona "Guardar como PDF"
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
