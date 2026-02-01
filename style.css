@@ -1,0 +1,346 @@
+/* =================================
+   VARIABLES CSS (Custom Properties)
+   =================================
+   Define colores principales para 
+   facilitar cambios globales de tema 
+*/
+:root {
+  --bg: #0f172a; /* Color de fondo principal (azul oscuro) */
+  --text: #f8fafc; /* Color de texto principal (blanco suave) */
+  --accent: #38bdf8; /* Color de acento (cyan brillante) */
+  --card: #1e293b; /* Color de fondo de tarjetas (azul medio) */
+}
+
+/* =================================
+   COLORES DE ICONOS DE MARCA
+   =================================
+   Asigna colores oficiales a cada 
+   icono de tecnología usando Font Awesome
+*/
+.fa-html5 {
+  color: #e34c26;
+} /* HTML5 - Naranja */
+.fa-css3-alt {
+  color: #264de4;
+} /* CSS3 - Azul */
+.fa-js {
+  color: #f7df1e;
+} /* JavaScript - Amarillo */
+.fa-python {
+  color: #3776ab;
+} /* Python - Azul */
+.fa-git-alt {
+  color: #f05032;
+} /* Git - Naranja rojizo */
+.fa-mobile-alt {
+  color: #42a5f5;
+} /* Flutter - Azul claro */
+.fa-database {
+  color: #336791;
+} /* PostgreSQL - Azul grisáceo */
+.fa-server {
+  color: #00c853;
+} /* APIs - Verde */
+.fa-palette {
+  color: #ff4081;
+} /* UI/UX - Rosa */
+
+/* =================================
+   ESTILOS BASE DEL BODY
+   =================================
+   Configuración general de la página
+*/
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--bg); /* Aplica color de fondo oscuro */
+  color: var(--text); /* Aplica color de texto claro */
+  margin: 0; /* Elimina márgenes por defecto */
+  display: block; /* Comportamiento de bloque estándar */
+}
+
+/* =================================
+   CONTENEDOR PRINCIPAL (CV)
+   =================================
+   Estructura tipo "documento" centrada
+   con ancho máximo para legibilidad
+*/
+.cv-container {
+  max-width: 900px; /* Ancho máximo para lectura cómoda */
+  margin: 2rem auto; /* Centrado horizontal con margen vertical */
+  background: var(--card); /* Fondo de tarjeta */
+  border-radius: 12px; /* Bordes redondeados */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); /* Sombra profunda */
+  min-height: 90vh; /* Altura mínima del 90% del viewport */
+  padding: 3rem; /* Espacio interno generoso */
+}
+
+/* =================================
+   SECCIÓN DE HABILIDADES (TAGS)
+   =================================
+   Layout flexible que se adapta y 
+   distribuye las etiquetas de skills
+*/
+.skills-tags {
+  display: flex; /* Layout flexible */
+  flex-wrap: wrap; /* Permite múltiples líneas */
+  gap: 10px; /* Espacio entre badges */
+  margin-top: 1rem; /* Separación superior */
+}
+
+/* =================================
+   HEADER (ENCABEZADO)
+   =================================
+   Sección superior con avatar, nombre
+   y subtitle centrados
+*/
+header {
+  text-align: center; /* Centra todo el contenido */
+  border-bottom: 2px solid #334155; /* Línea divisoria inferior */
+  padding-bottom: 2rem; /* Espacio antes del borde */
+  margin-bottom: 2rem; /* Espacio después del header */
+}
+
+/* Avatar circular con icono */
+.avatar {
+  width: 120px; /* Ancho del avatar */
+  height: 120px; /* Alto del avatar */
+  background: #334155; /* Fondo gris oscuro */
+  border-radius: 50%; /* Forma circular */
+  margin: 0 auto 1.5rem; /* Centrado horizontal + margen inferior */
+  display: flex; /* Layout flex para centrar icono */
+  align-items: center; /* Centra verticalmente */
+  justify-content: center; /* Centra horizontalmente */
+  font-size: 3rem; /* Tamaño del icono grande */
+  color: var(--accent); /* Color cyan brillante */
+  border: 4px solid var(--accent); /* Borde cyan */
+}
+
+/* Título principal (h1) */
+h1 {
+  color: var(--accent); /* Color cyan */
+  font-size: 3rem; /* Tamaño grande */
+  line-height: 1; /* Sin espaciado extra */
+  margin-bottom: 0.5rem; /* Pequeño margen inferior */
+}
+
+/* Subtitle (profesión) */
+.subtitle {
+  font-size: 1.5rem; /* Tamaño mediano */
+  color: #f8fafc; /* Blanco suave */
+  margin: 0; /* Sin márgenes */
+  font-weight: 500; /* Peso semi-bold */
+}
+
+/* =================================
+   SECCIONES GENERALES
+   =================================
+   Estructura común para todas las
+   secciones de contenido
+*/
+section {
+  margin-bottom: 3.5rem; /* Gran separación entre secciones */
+}
+
+/* Títulos de sección (h2) con borde lateral */
+section h2 {
+  font-size: 1.8rem; /* Tamaño notable */
+  color: var(--text); /* Texto claro */
+  display: flex; /* Layout flex */
+  align-items: center; /* Centra icono y texto */
+  gap: 12px; /* Espacio entre icono y texto */
+  margin-bottom: 1.5rem; /* Separación inferior */
+  border-left: 5px solid var(--accent); /* Barra lateral cyan */
+  padding-left: 1rem; /* Espacio interno izquierdo */
+  background: linear-gradient(
+    90deg,
+    rgba(56, 189, 248, 0.1) 0%,
+    transparent 100%
+  ); /* Degradado sutil */
+  padding-top: 5px; /* Padding superior */
+  padding-bottom: 5px; /* Padding inferior */
+  border-radius: 0 8px 8px 0; /* Redondeo solo lado derecho */
+}
+
+/* Iconos dentro de h2 */
+section h2 i {
+  color: var(--accent); /* Color cyan para iconos */
+}
+
+/* =================================
+   TIMELINE (EDUCACIÓN/EXPERIENCIA)
+   =================================
+   Componente de línea de tiempo con
+   puntos indicadores a la izquierda
+*/
+.timeline-item {
+  border-left: 2px solid #334155; /* Línea vertical gris */
+  padding-left: 1.5rem; /* Espacio a la izquierda */
+  margin-bottom: 2rem; /* Separación entre items */
+  position: relative; /* Posicionamiento para ::before */
+  margin-left: 10px; /* Desplazamiento del borde */
+}
+
+/* Punto circular indicador en timeline */
+.timeline-item::before {
+  content: ""; /* Elemento vacío */
+  position: absolute; /* Posicionamiento absoluto */
+  left: -6px; /* Centrado en la línea */
+  top: 5px; /* Posición vertical */
+  width: 10px; /* Ancho del punto */
+  height: 10px; /* Alto del punto */
+  background: var(--accent); /* Color cyan */
+  border-radius: 50%; /* Forma circular */
+}
+
+/* Título del item de timeline (h3) */
+.timeline-item h3 {
+  margin: 0; /* Sin márgenes */
+  font-size: 1.3rem; /* Tamaño mediano-grande */
+  color: #f8fafc; /* Blanco suave */
+}
+
+/* Subtítulo del item (h4) - Institución/Empresa */
+.timeline-item h4 {
+  margin: 5px 0; /* Pequeño margen vertical */
+  color: var(--accent); /* Color cyan */
+  font-size: 1.1rem; /* Tamaño mediano */
+  font-weight: normal; /* Peso normal (no bold) */
+}
+
+/* Fecha del timeline item */
+.timeline-item .date {
+  font-size: 0.9rem; /* Tamaño pequeño */
+  color: #94a3b8; /* Gris claro */
+  font-style: italic; /* Cursiva */
+}
+
+/* Descripción del timeline item */
+.timeline-item p {
+  margin-top: 0.8rem; /* Margen superior */
+  color: #cbd5e1; /* Gris muy claro */
+  line-height: 1.6; /* Interlineado cómodo */
+  font-size: 1rem; /* Tamaño estándar */
+}
+
+/* =================================
+   GRID DE CONTACTO
+   =================================
+   Grid responsivo que adapta columnas
+   según espacio disponible
+*/
+.contact-grid {
+  display: grid; /* Layout de cuadrícula */
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(200px, 1fr)
+  ); /* Columnas adaptables */
+  gap: 1.5rem; /* Separación entre items */
+  margin-top: 1rem; /* Margen superior */
+}
+
+/* Tarjeta individual de contacto */
+.contact-item {
+  background: #162032; /* Fondo azul muy oscuro */
+  padding: 1rem; /* Espacio interno */
+  border-radius: 8px; /* Bordes redondeados */
+  display: flex; /* Layout flex */
+  align-items: center; /* Centra verticalmente */
+  gap: 10px; /* Espacio entre icono y texto */
+  color: #cbd5e1; /* Texto gris claro */
+}
+
+/* Iconos dentro de items de contacto */
+.contact-item i {
+  color: var(--accent); /* Color cyan */
+  font-size: 1.2rem; /* Tamaño notable */
+}
+
+/* Links dentro de items de contacto */
+.contact-item a {
+  color: inherit; /* Hereda color del padre */
+  font-weight: normal; /* Peso normal */
+}
+
+/* =================================
+   ESTILOS GLOBALES DE ENLACES
+   =================================
+   Apariencia por defecto de links
+*/
+a {
+  color: var(--accent); /* Color cyan */
+  text-decoration: none; /* Sin subrayado */
+  font-weight: bold; /* Texto en negrita */
+}
+
+/* =================================
+   BADGES (ETIQUETAS)
+   =================================
+   Usados para habilidades y tecnologías
+*/
+.badge {
+  background: #334155; /* Fondo gris oscuro */
+  padding: 8px 15px; /* Espacio interno */
+  border-radius: 20px; /* Bordes muy redondeados (píldora) */
+  font-size: 0.9rem; /* Tamaño ligeramente reducido */
+  color: #fff; /* Texto blanco */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Sombra sutil */
+}
+
+/* =================================
+   GRID DE PROYECTOS
+   =================================
+   Cuadrícula adaptable para tarjetas
+   de proyectos destacados
+*/
+.proyectos-grid {
+  display: grid; /* Layout de cuadrícula */
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(300px, 1fr)
+  ); /* Columnas flexibles */
+  gap: 25px; /* Separación generosa */
+  padding: 0; /* Sin padding extra */
+}
+
+/* =================================
+   TARJETAS DE PROYECTOS
+   =================================
+   Componente individual para cada
+   proyecto con efecto hover
+*/
+.proyecto-card {
+  background: #162032; /* Fondo azul muy oscuro */
+  border: 1px solid #334155; /* Borde gris oscuro */
+  border-radius: 12px; /* Bordes redondeados */
+  padding: 1.5rem; /* Espacio interno */
+  transition: 0.3s; /* Transición suave para hover */
+}
+
+/* Efecto hover en tarjetas de proyecto */
+.proyecto-card:hover {
+  border-color: var(--accent); /* Borde cambia a cyan */
+  transform: translateY(-5px); /* Elevación sutil */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada */
+}
+
+/* =================================
+   MEDIA QUERIES (RESPONSIVE)
+   =================================
+   Adaptaciones para pantallas móviles
+   menores a 768px de ancho
+*/
+@media (max-width: 768px) {
+  .cv-container {
+    padding: 1.5rem; /* Reduce padding interno */
+    width: 95%; /* Ancho casi completo */
+    margin: 1rem auto; /* Márgenes reducidos */
+  }
+
+  h1 {
+    font-size: 2.2rem; /* Reduce tamaño del título */
+  }
+
+  .contact-grid {
+    grid-template-columns: 1fr; /* Una sola columna en móvil */
+  }
+}
